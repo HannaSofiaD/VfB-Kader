@@ -1,0 +1,46 @@
+---
+title: "VfB Kader"
+subtitle: "Transfervisualisierung"
+author: "Hanna Damaschke"
+date: '2022-05-19'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r Netzwerk einlesen}
+
+# Programmbibliothek laden
+library(igraph)
+
+# Einlesen der Edge- und Nodelist
+edges <- read.csv("https://raw.githubusercontent.com/HannaSofiaD/VfB-Kader/main/Edgelist.csv", header=T, as.is=T, sep = ",")
+
+nodes <- read.csv("https://raw.githubusercontent.com/HannaSofiaD/VfB-Kader/main/Nodelist.csv", header=T, as.is=T, sep = ",")
+
+# Matrix erstellen
+edgematrix <-as.matrix(edges)
+
+# Zusammenführen von Edge- und Nodelist als igraph-Objekt s
+VfB <- graph_from_data_frame(d=edgematrix, directed=F)
+VfB
+```
+
+```{r Netzwerk analysieren, fig.height=6, fig.width=9}
+
+
+
+plot(VfB,
+     asp=0,
+     layout=layout_with_kk,
+     rescale=TRUE,
+     vertex.size=4,
+     vertex.frame.color="grey80",
+     edge.color="grey20",
+     edge.arrow.size=.2,
+     main="VfB Kader",
+     sub="Transferanalyse")
+
+```
