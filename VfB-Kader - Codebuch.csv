@@ -1,0 +1,18 @@
+CODEBUCH,
+Datensatz VfB Kader,
+Aufgabe,"Uns interessieren die Transfers zum VFB für das jetzige Kader. Woher, d.h. von welchen Vereinen kommen die Spieler, welche Nationalität haben Sie und was wurde für Sie bezahlt?"
+,
+Wert,Kommentar
+edgelist,Enthält Informationen zum Transfer der Spieler des VfB-Kaders Stand 19. Mai
+from,Verein vor dem Transfer / Rückennummer Spieler-ID
+to ,Rückennummer Spieler-ID / Nationalität
+weight,"Transfersumme in 100.000 Euro Schritten, Leih-Gebühren oder Leih-Ende = kein Wert"
+season,"Transferdatum als Jahreszahl, auch bei Verleih Transferdatum aufführen"
+,
+nodelist,Enthält Informationen zu den Spielern und den Vereinen
+id,Rückennummer / Vereinsname / Land aus Edgelist
+name,Spieler oder Vereinsname
+country,Land des Vereins / Nationalität
+type,"1 = Spieler, 2 = Verein"
+,
+Sonstiges,Umlaute immer ersetzen
